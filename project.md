@@ -472,7 +472,7 @@ getWindow().setStatusBarColor(0xff1C86EE);//设置状态栏和title颜色一致�
 
 实现timetable（课程表）、grade（成绩查询）、test（考试时间）、me（我的）、login（登录）这五个用例的头部布局，布局的文件如下图：
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleUI.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleUI.PNG)
 
 先导入title实现所需的图片资源，在通过在RelativeLayout中嵌套其他布局或控件实现，如me（我的）的title实现细节如下：
 
@@ -532,15 +532,15 @@ getWindow().setStatusBarColor(0xff1C86EE);//设置状态栏和title颜色一致�
 
 ### 3.3.2.实现之后的布局
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleLogin.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleLogin.PNG)
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleTimetable.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleTimetable.PNG)
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleGrade.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleGrade.PNG)
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleTest.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleTest.PNG)
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleMe.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/titleMe.PNG)
 
 ### 3.3.3.布局关联到Activity的实现
 
@@ -566,7 +566,7 @@ titleTimetable.setVisibility(View.VISIBLE);
 
 实现效果如下：
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\gradeUI.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/gradeUI.PNG)
 
 ## 3.4.实现先登录再进入教务查询界面
 
@@ -596,7 +596,7 @@ public void addLoginFragment(){
 
 实现效果如下：
 
-![](F:\林光裕\软件体系结构试验\截图\开发过程截图\loginFragment.PNG)
+![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/loginFragment.PNG)
 
 ### 3.4.2.实现登录之后进入教务查询界面
 
