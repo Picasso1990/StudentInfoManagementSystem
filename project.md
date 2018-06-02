@@ -12,11 +12,17 @@
 
 ![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/login.PNG)
 
+## 1.3.登录用例表
 
-
-
-
-
+| 用例编号         | 01                                                           |
+| ---------------- | ------------------------------------------------------------ |
+| 用例名           | 登录                                                         |
+| 用例描述         | 学生使用教务系统的学号和密码进行登录                         |
+| 参与者           | 学生、管理员                                                 |
+| 普通用户、管理员 | 系统的用户登录页面正常运行，并学生的学号和密码存在于教务系统的数据库 |
+| 后置条件         | 进入学生的教务查询界面                                       |
+| 主事件流         | 1、学生进入系统的学生登录页面；2、学生输入需要登录的学号、密码；3、学生提交登录信息；4、系统对学生提交的学号、密码进行有效性检查；检查通过，系统跳转到学生教务信息查询页面。 |
+| 备选事件流       | 1、学生输入密码或学号为空，提示不能为空；2、学生输入的学号或密码错误，提示学号或密码错误；3、点击返回按钮直接返回上一级界面。 |
 
 # 2.创建后端服务Bmob
 
@@ -456,3 +462,184 @@ getWindow().setStatusBarColor(0xff1C86EE);//设置状态栏和title颜色一致�
 
 ![](https://github.com/linguangyu1996/StudentInfoManagementSystem/raw/master/images/mainShiXian.png)
 
+
+
+
+
+## 3.3.头部（title）布局的实现
+
+### 3.3.1.布局的XML的实现
+
+实现timetable（课程表）、grade（成绩查询）、test（考试时间）、me（我的）、login（登录）这五个用例的头部布局，布局的文件如下图：
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleUI.PNG)
+
+先导入title实现所需的图片资源，在通过在RelativeLayout中嵌套其他布局或控件实现，如me（我的）的title实现细节如下：
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBlue"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <ImageView
+        android:id="@+id/image_about"
+        android:src="@mipmap/about"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_about"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/image_about"
+        android:textColor="@color/colorWhite"
+        android:text="关于"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_me"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        android:text="我的"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image_login"
+        android:src="@mipmap/login"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_toLeftOf="@+id/image_login"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorWhite"
+        android:text="登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+```
+
+### 3.3.2.实现之后的布局
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleLogin.PNG)
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleTimetable.PNG)
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleGrade.PNG)
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleTest.PNG)
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\titleMe.PNG)
+
+### 3.3.3.布局关联到Activity的实现
+
+在MainActivity中初始化控件之后隐藏所有的title：
+
+```
+/**
+ * 隐藏所有的title
+ */
+public void goneAllTitle(){
+    titleTimetable.setVisibility(View.GONE);
+    titleGrade.setVisibility(View.GONE);
+    titleTest.setVisibility(View.GONE);
+    titleMe.setVisibility(View.GONE);
+}
+```
+
+在控件的onClick()方法中准确的执行title显示的方法：
+
+```
+titleTimetable.setVisibility(View.VISIBLE);
+```
+
+实现效果如下：
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\gradeUI.PNG)
+
+## 3.4.实现先登录再进入教务查询界面
+
+### 3.4.1.实现未登录时显示的LoginFragment.java
+
+在MainActivity中添加判断的标志：
+
+```
+public static int panduan = 0;//判断是否登录，若为0，还未登录，若为1，已登录
+```
+
+当panduan为0时将显示LoginFragment，实现如下：
+
+```
+/**
+ * 添加显示LoginFragment
+ */
+public void addLoginFragment(){
+    if (loginFragment == null){
+        loginFragment = new LoginFragment();
+        fragmentTransaction.add(R.id.layout_content,loginFragment);//将Fragment添加到布局中
+    }else{
+        fragmentTransaction.show(loginFragment);
+    }
+}
+```
+
+实现效果如下：
+
+![](F:\林光裕\软件体系结构试验\截图\开发过程截图\loginFragment.PNG)
+
+### 3.4.2.实现登录之后进入教务查询界面
+
+在LoginFragment中实现登录的控件点击事件，采用startActivityForResult()方法启动LoginActivity之后返回接收回调的数据，实现如下：
+
+```
+imagePleaseLogin.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        getActivity().startActivityForResult(intent,1000);//启动活动，传递请求码为1000
+    }
+});
+```
+
+在LoginActivity中返回resultCode为RESULT_OK：
+
+```
+Intent intent = new Intent();
+setResult(RESULT_OK,intent);
+finish();
+```
+
+在MainActivity中重写onActivityResult(),因为LoginActivity()被销毁后会回调该方法，给判断赋值为1，即已经实现登录，实现如下：
+
+```
+/**
+ * 处理Login登录成功返回的数据
+ * @param requestCode
+ * @param resultCode
+ * @param data
+ */
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    switch (requestCode) {
+        case 1000:
+            if (resultCode == RESULT_OK) {
+                panduan = 1;
+            }
+            break;
+        default:
+    }
+}
+```
+
+即在登录界面填写正确的学号和密码之后进入学生教务查询界面。

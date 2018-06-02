@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBlue"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/image_upward"
+            android:src="@mipmap/upward"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="22dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_upward"
+            android:layout_toRightOf="@+id/image_upward"
+            android:layout_centerVertical="true"
+            android:text="上周"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_timetable"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="16dp"
+            android:text="课程表"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image_down"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/down"
+            android:layout_width="22dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_down"
+            android:layout_toLeftOf="@+id/image_down"
+            android:layout_centerVertical="true"
+            android:text="下周"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -18,7 +18,6 @@ import com.linguangyu.studentinfomanagementsystem.R;
 
 public class TimeTableFragment extends Fragment {
 
-    private String context;
     private TextView mTextView;
 
     public TimeTableFragment() {
@@ -29,7 +28,7 @@ public class TimeTableFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.timetable_fragment,container,false);//加载timetable_fragment布局
+        View view = inflater.inflate(R.layout.fragment_timetable,container,false);//加载timetable_fragment布局
 //          mTextView = view.findViewById(R.id.text2);
 //        mTextView.setText(context);
         return view;

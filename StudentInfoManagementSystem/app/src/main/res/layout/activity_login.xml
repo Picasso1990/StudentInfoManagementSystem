@@ -7,7 +7,7 @@
     android:background="@color/colorBackground"
     tools:context="com.linguangyu.studentinfomanagementsystem.activity.LoginActivity">
 
-    <include layout="@layout/login_title"/>
+    <include layout="@layout/title_login"/>
 
     <TextView
         android:id="@+id/text_1"

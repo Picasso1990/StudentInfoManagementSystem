@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBlue"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <ImageView
+        android:id="@+id/image_about"
+        android:src="@mipmap/about"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_about"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/image_about"
+        android:textColor="@color/colorWhite"
+        android:text="关于"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_me"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        android:text="我的"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image_login"
+        android:src="@mipmap/login"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_toLeftOf="@+id/image_login"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorWhite"
+        android:text="登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

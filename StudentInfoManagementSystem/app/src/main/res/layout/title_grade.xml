@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="66dp">
+
+    <RelativeLayout
+        android:id="@+id/layout_grade"
+        android:background="@color/colorBlue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/image_gpa"
+            android:src="@mipmap/gpa"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="22dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_gpa"
+            android:layout_toRightOf="@+id/image_gpa"
+            android:layout_centerVertical="true"
+            android:text="GPA"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_grade"
+            android:layout_centerInParent="true"
+            android:textSize="16dp"
+            android:text="成绩查询"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image_select"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/select"
+            android:layout_marginRight="10dp"
+            android:layout_width="22dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_select"
+            android:layout_toLeftOf="@+id/image_select"
+            android:layout_centerVertical="true"
+            android:text="筛选"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/layout_small_title"
+       android:layout_below="@+id/layout_grade"
+       android:layout_width="match_parent"
+       android:layout_height="25dp">
+
+       <TextView
+           android:id="@+id/select_season"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="10dp"
+           android:text="全部"
+           android:textSize="13dp"
+           android:textColor="@color/colorText"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+       <TextView
+           android:id="@+id/text_num_course_total"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:layout_marginRight="10dp"
+           android:text="60"
+           android:textColor="@color/colorText"
+           android:textSize="13dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+       <TextView
+           android:id="@+id/text_xiehao"
+           android:layout_centerVertical="true"
+           android:layout_toLeftOf="@+id/text_num_course_total"
+           android:layout_marginRight="2dp"
+           android:text="/"
+           android:textColor="@color/colorText"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+       <TextView
+           android:id="@+id/text_num_course_true"
+           android:layout_toLeftOf="@+id/text_xiehao"
+           android:layout_centerVertical="true"
+           android:text="60"
+           android:textSize="13dp"
+           android:layout_marginRight="2dp"
+           android:textColor="@color/colorText"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+       <ImageView
+           android:id="@+id/image_true"
+           android:src="@mipmap/point_green"
+           android:layout_centerVertical="true"
+           android:layout_toLeftOf="@+id/text_num_course_true"
+           android:layout_marginRight="5dp"
+           android:layout_width="10dp"
+           android:layout_height="wrap_content"
+           android:visibility="visible"/>
+
+       <ImageView
+           android:id="@+id/image_false"
+           android:src="@mipmap/point_red"
+           android:layout_centerVertical="true"
+           android:layout_toLeftOf="@+id/text_num_course_true"
+           android:layout_marginRight="5dp"
+           android:layout_width="10dp"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           />
+
+   </RelativeLayout>
+
+    <View
+        android:id="@+id/view_below"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlue"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>

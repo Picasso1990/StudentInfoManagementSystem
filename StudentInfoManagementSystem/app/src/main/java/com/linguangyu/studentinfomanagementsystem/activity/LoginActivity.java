@@ -10,6 +10,7 @@ import android.view.Window;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.linguangyu.studentinfomanagementsystem.R;
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mStudentId;
     private EditText mPassword;
     private Button mLogin;
+    private ImageView mBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +65,11 @@ public class LoginActivity extends AppCompatActivity {
                         public void done(List<UserTable> list, BmobException e) {
                             if (e == null && (!list.isEmpty())){
                                 Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, TestActivity.class);
-                                startActivity(intent);
+//                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                                startActivity(intent);
+                                Intent intent = new Intent();
+                                setResult(RESULT_OK,intent);
+                                finish();
                             }else if (e == null && list.isEmpty()){
                                 Toast.makeText(LoginActivity.this,"学号或密码错误",Toast.LENGTH_SHORT).show();
                             }else{
@@ -76,13 +81,24 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * 返回
+         */
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void init(){
         mStudentId = findViewById(R.id.edit_studentId);
         mPassword = findViewById(R.id.edit_password);
         mLogin = findViewById(R.id.button_login);
+        mBack = findViewById(R.id.image_back);
     }
-
 }
 

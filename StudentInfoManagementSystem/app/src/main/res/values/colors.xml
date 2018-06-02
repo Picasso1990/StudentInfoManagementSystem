@@ -10,4 +10,5 @@
     <color name="colorGray">#fdfdfe</color>
     <color name="colortabno">#bfbfbf</color>
     <color name="colortabgreen">#1afa29</color>
+    <color name="colorText">#121212</color>
 </resources>
