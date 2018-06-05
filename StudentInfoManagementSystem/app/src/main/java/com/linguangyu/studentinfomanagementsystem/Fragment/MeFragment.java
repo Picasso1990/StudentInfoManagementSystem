@@ -16,7 +16,6 @@ import com.linguangyu.studentinfomanagementsystem.R;
  */
 
 public class MeFragment extends Fragment {
-    private TextView mTextView;
 
     public MeFragment(){
 
@@ -25,9 +24,7 @@ public class MeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_timetable,container,false);
-        mTextView = view.findViewById(R.id.text2);
-        mTextView.setText("Me");
+        View view = inflater.inflate(R.layout.fragment_me,container,false);
         return view;
     }
 }

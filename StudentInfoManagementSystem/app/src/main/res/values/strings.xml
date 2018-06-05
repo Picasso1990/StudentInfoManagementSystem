@@ -16,8 +16,16 @@
     <string name="mima">请输入密码</string>
     <string name="xuehao">请输入学号</string>
     <string name="login">登录</string>
-    <string name="timetable">课程表</string>
     <string name="grade">成绩</string>
     <string name="test">考试</string>
+    <string name="garde">成绩查询</string>
+    <string name="select">筛选</string>
+    <string name="gpa">GPA</string>
+    <string name="total">全部</string>
+    <string name="abort">关于</string>
     <string name="me">我的</string>
+    <string name="testTitle">考试安排</string>
+    <string name="upwaed">上周</string>
+    <string name="down">下周</string>
+    <string name="timetable">课程表</string>
 </resources>

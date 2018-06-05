@@ -18,6 +18,9 @@ import com.linguangyu.studentinfomanagementsystem.Fragment.MeFragment;
 import com.linguangyu.studentinfomanagementsystem.Fragment.TestFragment;
 import com.linguangyu.studentinfomanagementsystem.Fragment.TimeTableFragment;
 import com.linguangyu.studentinfomanagementsystem.R;
+import com.linguangyu.studentinfomanagementsystem.model.StudentUser;
+
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by 光裕 on 2018/5/30.
@@ -47,10 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MeFragment meFragment;
     private LoginFragment loginFragment;
 
-    private RelativeLayout titleTimetable;
-    private RelativeLayout titleGrade;
-    private RelativeLayout titleTest;
-    private RelativeLayout titleMe;
+//    private RelativeLayout titleTimetable;
+//    private RelativeLayout titleGrade;
+//    private RelativeLayout titleTest;
+//    private RelativeLayout titleMe;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
@@ -66,6 +69,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragmentManager = getSupportFragmentManager();
         init();
         mTabMenuTimetable.performClick();
+    }
+
+    public static void huanCun(){
+        StudentUser studentUser = BmobUser.getCurrentUser(StudentUser.class);
+        if (studentUser != null){
+            panduan = 1;
+        }else {
+            panduan = 0;
+        }
     }
 
     /**
@@ -87,10 +99,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTextTest = findViewById(R.id.text_test);
         mTextMe = findViewById(R.id.text_me);
 
-        titleTimetable = findViewById(R.id.layout_timetable);
-        titleGrade = findViewById(R.id.layout_grade);
-        titleTest = findViewById(R.id.layout_test);
-        titleMe = findViewById(R.id.layout_me);
+//        titleTimetable = findViewById(R.id.layout_timetable);
+//        titleGrade = findViewById(R.id.layout_grade);
+//        titleTest = findViewById(R.id.layout_test);
+//        titleMe = findViewById(R.id.layout_me);
 
         mTabMenuTimetable.setOnClickListener(this);
         mTabMenuGrade.setOnClickListener(this);
@@ -100,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * 重置所有文本的选中状态
+     * 重置所有图片和文本的选中状态
      */
     public void selected(){
 
@@ -144,12 +156,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 隐藏所有的title
      */
-    public void goneAllTitle(){
-        titleTimetable.setVisibility(View.GONE);
-        titleGrade.setVisibility(View.GONE);
-        titleTest.setVisibility(View.GONE);
-        titleMe.setVisibility(View.GONE);
-    }
+//    public void goneAllTitle(){
+//        titleTimetable.setVisibility(View.GONE);
+//        titleGrade.setVisibility(View.GONE);
+//        titleTest.setVisibility(View.GONE);
+//        titleMe.setVisibility(View.GONE);
+//    }
 
     /**
      * 处理Login登录成功返回的数据
@@ -194,34 +206,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (v.getId()){
                 case R.id.tab_menu_timetable:
                     selected();//重置所有文本的选中状态的方法
-                    goneAllTitle();//隐藏所有的title
-                    titleTimetable.setVisibility(View.VISIBLE);
+//                    goneAllTitle();//隐藏所有的title
+//                    titleTimetable.setVisibility(View.VISIBLE);
                     mImageTimetable.setSelected(true);
                     mTextTimetable.setSelected(true);
+//                    mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
                     addLoginFragment();
                     break;
                 case R.id.tab_menu_grade:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleGrade.setVisibility(View.VISIBLE);
+//                    goneAllTitle();//隐藏所有的title
+//                    titleGrade.setVisibility(View.VISIBLE);
                     mImageGrade.setSelected(true);
                     mTextGrade.setSelected(true);
+//                    mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
                     addLoginFragment();
                     break;
                 case R.id.tab_menu_test:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleTest.setVisibility(View.VISIBLE);
+//                    goneAllTitle();//隐藏所有的title
+//                    titleTest.setVisibility(View.VISIBLE);
                     mImageTest.setSelected(true);
                     mTextTest.setSelected(true);
+//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
                     addLoginFragment();
                     break;
                 case R.id.tab_menu_me:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleMe.setVisibility(View.VISIBLE);
+//                    goneAllTitle();//隐藏所有的title
+//                    titleMe.setVisibility(View.VISIBLE);
                     mImageMe.setSelected(true);
                     mTextMe.setSelected(true);
+//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
                     addLoginFragment();
                     break;
             }
@@ -230,11 +246,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (v.getId()){
                 case R.id.tab_menu_timetable:
                     selected();//重置所有文本的选中状态的方法
-                    goneAllTitle();//隐藏所有的title
-                    titleTimetable.setVisibility(View.VISIBLE);
                     mImageTimetable.setSelected(true);
                     mTextTimetable.setSelected(true);
-//                mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (timeTableFragment == null){
                         timeTableFragment = new TimeTableFragment();
                         fragmentTransaction.add(R.id.layout_content,timeTableFragment);//将Fragment添加到布局中
@@ -244,11 +258,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.tab_menu_grade:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleGrade.setVisibility(View.VISIBLE);
                     mImageGrade.setSelected(true);
                     mTextGrade.setSelected(true);
-//                mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (gradeFragment == null){
                         gradeFragment = new GradeFragment();
                         fragmentTransaction.add(R.id.layout_content,gradeFragment);
@@ -258,11 +270,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.tab_menu_test:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleTest.setVisibility(View.VISIBLE);
                     mImageTest.setSelected(true);
                     mTextTest.setSelected(true);
-//                mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (testFragment == null){
                         testFragment = new TestFragment();
                         fragmentTransaction.add(R.id.layout_content,testFragment);
@@ -272,11 +282,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.tab_menu_me:
                     selected();
-                    goneAllTitle();//隐藏所有的title
-                    titleMe.setVisibility(View.VISIBLE);
                     mImageMe.setSelected(true);
                     mTextMe.setSelected(true);
-//                mTextMe.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    mTextMe.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (meFragment == null){
                         meFragment = new MeFragment();
                         fragmentTransaction.add(R.id.layout_content,meFragment);

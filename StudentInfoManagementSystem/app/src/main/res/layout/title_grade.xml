@@ -22,16 +22,16 @@
             android:id="@+id/text_gpa"
             android:layout_toRightOf="@+id/image_gpa"
             android:layout_centerVertical="true"
-            android:text="GPA"
+            android:text="@string/gpa"
             android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/text_grade"
+            android:id="@+id/text_title_grade"
             android:layout_centerInParent="true"
             android:textSize="16dp"
-            android:text="成绩查询"
+            android:text="@string/garde"
             android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -49,7 +49,7 @@
             android:id="@+id/text_select"
             android:layout_toLeftOf="@+id/image_select"
             android:layout_centerVertical="true"
-            android:text="筛选"
+            android:text="@string/select"
             android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -66,7 +66,7 @@
            android:id="@+id/select_season"
            android:layout_centerVertical="true"
            android:layout_marginLeft="10dp"
-           android:text="全部"
+           android:text="@string/total"
            android:textSize="13dp"
            android:textColor="@color/colorText"
            android:layout_width="wrap_content"

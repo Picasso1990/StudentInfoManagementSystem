@@ -4,48 +4,85 @@
     android:layout_width="match_parent"
     android:layout_height="40dp">
 
-        <ImageView
-            android:id="@+id/image_upward"
-            android:src="@mipmap/upward"
+        <RelativeLayout
+            android:id="@+id/relatilayout_upward"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_width="22dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/text_upward"
-            android:layout_toRightOf="@+id/image_upward"
-            android:layout_centerVertical="true"
-            android:text="上周"
-            android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/text_timetable"
+                <ImageView
+                    android:id="@+id/image_upward"
+                    android:src="@mipmap/upward"
+                    android:layout_centerVertical="true"
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/text_upward"
+                    android:layout_toRightOf="@+id/image_upward"
+                    android:layout_centerVertical="true"
+                    android:text="@string/upwaed"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_centerInParent="true"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp"
-            android:text="课程表"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/image_down"
+                <TextView
+                    android:id="@+id/text_title_timetable"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp"
+                    android:text="@string/timetable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/text_title_timetable_week"
+                    android:layout_toRightOf="@+id/text_title_timetable"
+                    android:textSize="13dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorWhite"
+                    android:text="(第1周)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relatilayout_down"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:src="@mipmap/down"
-            android:layout_width="22dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/text_down"
-            android:layout_toLeftOf="@+id/image_down"
-            android:layout_centerVertical="true"
-            android:text="下周"
-            android:textColor="@color/colorWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/image_down"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/down"
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/text_down"
+                    android:layout_toLeftOf="@+id/image_down"
+                    android:layout_centerVertical="true"
+                    android:text="@string/down"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
 
 </RelativeLayout>
