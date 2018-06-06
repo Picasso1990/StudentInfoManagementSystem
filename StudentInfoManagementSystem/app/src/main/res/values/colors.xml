@@ -12,4 +12,5 @@
     <color name="colortabgreen">#1afa29</color>
     <color name="colorText">#121212</color>
     <color name="colorRed">#EE2C2C</color>
+    <color name="colorGray2">#EDEDED</color>
 </resources>

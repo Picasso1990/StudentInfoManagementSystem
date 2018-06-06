@@ -47,12 +47,6 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView mBack;
     Button button_1;
 
-//    private static final int GIVE_LIST = 1;
-//    private static final int GIVE_LIST_WEEK = 2;
-//
-//    public static List<TimetableTable> list;
-//    public static List<TimetableTable> listWeeks;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
                         public void done(StudentUser studentUser, BmobException e) {
                             if (e == null && studentUser != null){
                                 Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-//                                queryMoreToMore();
                                 Intent intent = new Intent();
                                 setResult(RESULT_OK,intent);
                                 finish();
@@ -207,66 +200,6 @@ public class LoginActivity extends AppCompatActivity {
         mBack = findViewById(R.id.image_back);
         button_1 = findViewById(R.id.button_1);
     }
-
-    /**
-     * 查询多对多关联，StudentUser关联TimetableTable，TimetableTable关联Weeks
-     */
-//    private void queryMoreToMore(){
-//
-//        BmobQuery<TimetableTable> query = new BmobQuery<>();
-//        StudentUser studentUser = BmobUser.getCurrentUser(StudentUser.class);
-//        query.addWhereRelatedTo("timetable",new BmobPointer(studentUser));
-//        query.findObjects(new FindListener<TimetableTable>() {
-//            @Override
-//            public void done(List<TimetableTable> list, BmobException e) {
-//                if (e==null && (!list.isEmpty())){
-//                    Message message = handler.obtainMessage();
-//                    message.what = GIVE_LIST;
-//                    message.obj = list;
-//                    handler.sendMessage(message);
-//                }else if (e == null && list.isEmpty()){
-//                    Toast.makeText(LoginActivity.this,"没有课程2",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(LoginActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        BmobQuery<TimetableTable> queryWeeks = new BmobQuery<>();
-//        Weeks weeks = new Weeks();
-//        weeks.setObjectId("lQEMDDDP");
-//        queryWeeks.addWhereRelatedTo("timetableWeeks",new BmobPointer(weeks));
-//        queryWeeks.findObjects(new FindListener<TimetableTable>() {
-//            @Override
-//            public void done(List<TimetableTable> list, BmobException e) {
-//                if (e==null && (!list.isEmpty())){
-//                    Message message = handler.obtainMessage();
-//                    message.what = GIVE_LIST_WEEK;
-//                    message.obj = list;
-//                    handler.sendMessage(message);
-//                }else if (e == null && list.isEmpty()){
-//                    Toast.makeText(LoginActivity.this,"没有课程2",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(LoginActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//    }
-//
-//    private Handler handler = new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            switch (msg.what){
-//                case GIVE_LIST:
-//                    list = (List<TimetableTable>) msg.obj;
-//                    break;
-//                case GIVE_LIST_WEEK:
-//                    listWeeks = (List<TimetableTable>) msg.obj;
-//                    break;
-//            }
-//        }
-//    };
 
 }
 

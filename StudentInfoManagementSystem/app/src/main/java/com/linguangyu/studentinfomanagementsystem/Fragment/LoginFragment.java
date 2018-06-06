@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.linguangyu.studentinfomanagementsystem.R;
 import com.linguangyu.studentinfomanagementsystem.activity.LoginActivity;
 import com.linguangyu.studentinfomanagementsystem.activity.MainActivity;
+import com.linguangyu.studentinfomanagementsystem.model.GradeTable;
+import com.linguangyu.studentinfomanagementsystem.model.SeasonTable;
 import com.linguangyu.studentinfomanagementsystem.model.StudentUser;
 import com.linguangyu.studentinfomanagementsystem.model.TimetableTable;
 import com.linguangyu.studentinfomanagementsystem.model.UserTable;
@@ -92,14 +94,32 @@ public class LoginFragment extends Fragment {
 //            }
 //        });
 
-        Weeks weeks = new Weeks();
-        weeks.setObjectId("mhyGDDDv");
-        TimetableTable timetableTable = new TimetableTable();
-        timetableTable.setObjectId("ATUREEEP");
+//        Weeks weeks = new Weeks();
+//        weeks.setObjectId("mhyGDDDv");
+//        TimetableTable timetableTable = new TimetableTable();
+//        timetableTable.setObjectId("ATUREEEP");
+//        BmobRelation relation = new BmobRelation();
+//        relation.add(timetableTable);
+//        weeks.setTimetableWeeks(relation);
+//        weeks.update(new UpdateListener() {
+//            @Override
+//            public void done(BmobException e) {
+//                if (e == null){
+//                    Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(getActivity(),"添加失败",Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+        SeasonTable seasonTable = new SeasonTable();
+        seasonTable.setObjectId("qLSrRRRZ");
+        GradeTable gradeTable = new GradeTable();
+        gradeTable.setObjectId("M0PFGGGH");
         BmobRelation relation = new BmobRelation();
-        relation.add(timetableTable);
-        weeks.setTimetableWeeks(relation);
-        weeks.update(new UpdateListener() {
+        relation.add(gradeTable);
+        seasonTable.setGradeSeason(relation);
+        seasonTable.update(new UpdateListener() {
             @Override
             public void done(BmobException e) {
                 if (e == null){

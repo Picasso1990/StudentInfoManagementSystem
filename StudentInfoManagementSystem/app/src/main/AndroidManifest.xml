@@ -38,6 +38,7 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".activity.TestActivity"></activity>
+        <activity android:name=".activity.SelectActivity"></activity>
 
         <activity
             android:name=".activity.MainActivity">

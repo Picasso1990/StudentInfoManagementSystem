@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);//因为Fragment要取到数据，一定要加上这句
         switch (requestCode) {
             case 1000:
                 if (resultCode == RESULT_OK) {

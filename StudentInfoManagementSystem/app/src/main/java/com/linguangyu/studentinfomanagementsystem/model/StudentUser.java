@@ -14,6 +14,15 @@ public class StudentUser extends BmobUser {
     private String nianji;
     private BmobRelation timetable;
     private BmobRelation grade;
+    private BmobRelation season;
+
+    public BmobRelation getSeason() {
+        return season;
+    }
+
+    public void setSeason(BmobRelation season) {
+        this.season = season;
+    }
 
     public BmobRelation getGrade() {
         return grade;

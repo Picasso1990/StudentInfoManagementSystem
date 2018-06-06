@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBlue"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <ImageView
+        android:id="@+id/image_select_back"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/back"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_select_back"
+        android:layout_toRightOf="@+id/image_select_back"
+        android:layout_centerVertical="true"
+        android:text="@string/garde"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_grade_select"
+        android:layout_centerInParent="true"
+        android:text="成绩筛选"
+        android:textSize="16dp"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image_select_chongzhi"
+        android:src="@mipmap/chongzhi"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_select_chongzhi"
+        android:layout_toLeftOf="@+id/image_select_chongzhi"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorWhite"
+        android:text="重置"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

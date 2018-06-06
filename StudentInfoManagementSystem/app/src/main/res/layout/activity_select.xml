@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorGray2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_select"
+        android:id="@+id/layout_select"/>
+
+    <TextView
+        android:id="@+id/text_activity_select"
+        android:layout_below="@+id/layout_select"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:text="根据学期筛选"
+        android:textSize="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/view_select_up"
+        android:layout_below="@+id/text_activity_select"
+        android:background="@color/colortabno"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <ListView
+        android:id="@+id/listView_select"
+        android:layout_below="@+id/view_select_up"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:id="@+id/view_select_down"
+        android:layout_below="@+id/listView_select"
+        android:background="@color/colortabno"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+
+</RelativeLayout>

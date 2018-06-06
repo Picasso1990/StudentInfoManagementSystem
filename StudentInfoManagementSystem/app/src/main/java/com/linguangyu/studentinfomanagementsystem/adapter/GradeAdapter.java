@@ -21,7 +21,6 @@ import java.util.List;
 public class GradeAdapter extends ArrayAdapter<GradeTable> {
 
     private int resourceId;
-//    public static int isTrue = 10000;
 
     public GradeAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<GradeTable> objects) {
         super(context, textViewResourceId, objects);
@@ -54,13 +53,12 @@ public class GradeAdapter extends ArrayAdapter<GradeTable> {
         viewHolder.text_grade_courseClass.setText(gradeTable.getCourseClass());
         viewHolder.text_grade_testClass.setText(gradeTable.getTestClass());
         viewHolder.text_grade_xuefen.setText(gradeTable.getXuefen() + "学分");
-        if (gradeTable.getFenshu() >= 60){
-            viewHolder.text_grade_fenshu.setText(gradeTable.getFenshu()+"");
-        }else {
-            viewHolder.text_grade_fenshu.setText(gradeTable.getFenshu()+"");
-            viewHolder.text_grade_fenshu.setTextColor(getContext().getResources().getColor(R.color.colorRed));
-            viewHolder.view_grade_isPass.setBackgroundColor(getContext().getResources().getColor(R.color.colorRed));
-        }
+        viewHolder.text_grade_fenshu.setText(gradeTable.getFenshu()+"");
+//        if (gradeTable.getFenshu() < 60){
+//            viewHolder.text_grade_fenshu.setText(gradeTable.getFenshu()+"");
+//            viewHolder.text_grade_fenshu.setTextColor(getContext().getResources().getColor(R.color.colorRed));
+//            viewHolder.view_grade_isPass.setBackgroundColor(getContext().getResources().getColor(R.color.colorRed));
+//        }
 
         return view;
     }
@@ -68,7 +66,7 @@ public class GradeAdapter extends ArrayAdapter<GradeTable> {
     /**
      * 设置缓存类
      */
-    class ViewHolder{
+    static class ViewHolder{
 
         TextView text_grade_courseName;
         TextView text_grade_bixiu;
