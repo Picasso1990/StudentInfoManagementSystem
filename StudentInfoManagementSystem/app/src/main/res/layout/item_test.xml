@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/text_test_courseName"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="15dp"
+        android:text="软件测试与质量保证"
+        android:textColor="@color/colorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_timeStart"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:text="2018-04-26 10:25"
+        android:textSize="11dp"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/text_test_timefenge"-->
+        <!--android:layout_toRightOf="@+id/text_test_timeStart"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginLeft="1dp"-->
+        <!--android:layout_marginRight="1dp"-->
+        <!--android:text="&#45;&#45;"-->
+        <!--android:textSize="11dp"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <TextView
+        android:id="@+id/text_test_timeLength"
+        android:layout_toRightOf="@+id/text_test_timeStart"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="2dp"
+        android:text="(40分钟)"
+        android:textSize="11dp"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_testClass"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="12dp"
+        android:text="随堂考"
+        android:textSize="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_gehao"
+        android:layout_toLeftOf="@+id/text_test_testClass"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:textSize="13dp"
+        android:text="|"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_testTeacher"
+        android:layout_toLeftOf="@+id/text_test_gehao"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:textSize="11dp"
+        android:text="廖朝晖,刘芳"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_place"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="11dp"
+        android:text="教3-307"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_test_campus"
+        android:layout_toLeftOf="@+id/text_test_place"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="11dp"
+        android:text="大学城校区"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/view_grade_isPass"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colortabno"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+</RelativeLayout>

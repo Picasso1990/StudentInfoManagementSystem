@@ -15,6 +15,15 @@ public class StudentUser extends BmobUser {
     private BmobRelation timetable;
     private BmobRelation grade;
     private BmobRelation season;
+    private BmobRelation test;
+
+    public BmobRelation getTest() {
+        return test;
+    }
+
+    public void setTest(BmobRelation test) {
+        this.test = test;
+    }
 
     public BmobRelation getSeason() {
         return season;
