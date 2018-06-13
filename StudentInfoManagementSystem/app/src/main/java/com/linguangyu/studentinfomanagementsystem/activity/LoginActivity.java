@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
+        SysApplication.getInstance().addActivity(this);//添加入MyApplication
         getWindow().setStatusBarColor(0xff1C86EE);
         init();//初始化
 
@@ -91,12 +92,18 @@ public class LoginActivity extends AppCompatActivity {
                         public void done(StudentUser studentUser, BmobException e) {
                             if (e == null && studentUser != null){
                                 Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent();
-                                setResult(RESULT_OK,intent);
-                                finish();
+//                                Intent intent = new Intent();
+//                                setResult(RESULT_OK,intent);
+                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                startActivity(intent);
+//                                finish();
                             }else if (e == null && studentUser == null){
+                                mStudentId.setText("");
+                                mPassword.setText("");
                                 Toast.makeText(LoginActivity.this,"学号或密码错误",Toast.LENGTH_SHORT).show();
                             }else {
+                                mStudentId.setText("");
+                                mPassword.setText("");
                                 Toast.makeText(LoginActivity.this,"服务器连接错误",Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -115,6 +122,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //判断缓存
+        BmobUser bmobUser = BmobUser.getCurrentUser();
+        if (bmobUser != null){
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void init(){

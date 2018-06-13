@@ -48,6 +48,7 @@ public class SelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);//设置去除标题
         setContentView(R.layout.activity_select);
+        SysApplication.getInstance().addActivity(this);//添加入MyApplication
         getWindow().setStatusBarColor(0xff1C86EE);
         image_select_back = findViewById(R.id.image_select_back);
         text_select_back = findViewById(R.id.text_select_back);

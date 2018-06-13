@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    private RelativeLayout titleTest;
 //    private RelativeLayout titleMe;
 
+    private ImageView image_main_login;
+    private TextView text_main_login;
+
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
 
@@ -65,20 +68,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);//设置去除标题
         setContentView(R.layout.activity_main);
+        SysApplication.getInstance().addActivity(this);//添加入MyApplication
         getWindow().setStatusBarColor(0xff1C86EE);//设置状态栏和title颜色一致，0xff表示透明度100% 加上颜色值就行了。如上：颜色值是: 0xff + 1C86EE，要求API最小是21。
         fragmentManager = getSupportFragmentManager();
         init();
+
+        image_main_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+//                startActivityForResult(intent,1000);
+                startActivity(intent);
+            }
+        });
+
         mTabMenuTimetable.performClick();
     }
 
-    public static void huanCun(){
-        StudentUser studentUser = BmobUser.getCurrentUser(StudentUser.class);
-        if (studentUser != null){
-            panduan = 1;
-        }else {
-            panduan = 0;
-        }
-    }
+//    public static void huanCun(){
+//        StudentUser studentUser = BmobUser.getCurrentUser(StudentUser.class);
+//        if (studentUser != null){
+//            panduan = 1;
+//        }else {
+//            panduan = 0;
+//        }
+//    }
 
     /**
      * 初始化控件
@@ -103,6 +117,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        titleGrade = findViewById(R.id.layout_grade);
 //        titleTest = findViewById(R.id.layout_test);
 //        titleMe = findViewById(R.id.layout_me);
+
+        image_main_login = findViewById(R.id.image_main_login);
+        text_main_login = findViewById(R.id.text_main_login);
 
         mTabMenuTimetable.setOnClickListener(this);
         mTabMenuGrade.setOnClickListener(this);
@@ -148,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (meFragment != null){
             transaction.hide(meFragment);
         }
-        if (loginFragment != null){
-            transaction.hide(loginFragment);
-        }
+//        if (loginFragment != null){
+//            transaction.hide(loginFragment);
+//        }
     }
 
     /**
@@ -185,14 +202,106 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 添加显示LoginFragment
      */
-    public void addLoginFragment(){
-        if (loginFragment == null){
-            loginFragment = new LoginFragment();
-            fragmentTransaction.add(R.id.layout_content,loginFragment);//将Fragment添加到布局中
-        }else{
-            fragmentTransaction.show(loginFragment);
-        }
-    }
+//    public void addLoginFragment(){
+//        if (loginFragment == null){
+//            loginFragment = new LoginFragment();
+//            fragmentTransaction.add(R.id.layout_content,loginFragment);//将Fragment添加到布局中
+//        }else{
+//            fragmentTransaction.show(loginFragment);
+//        }
+//    }
+
+    /**
+     * 控件的点击事件实现
+     */
+//    public void onClick(View v) {
+//
+//        fragmentTransaction = fragmentManager.beginTransaction();//开启另一个事物
+//        hideAllFrament(fragmentTransaction);//隐藏所有Fragment方法
+//        if (panduan == 0){
+//            switch (v.getId()){
+//                case R.id.tab_menu_timetable:
+//                    selected();//重置所有文本的选中状态的方法
+//                    mImageTimetable.setSelected(true);
+//                    mTextTimetable.setSelected(true);
+////                    addLoginFragment();
+//                    break;
+//                case R.id.tab_menu_grade:
+//                    selected();
+//                    mImageGrade.setSelected(true);
+//                    mTextGrade.setSelected(true);
+////                    addLoginFragment();
+//                    break;
+//                case R.id.tab_menu_test:
+//                    selected();
+//                    mImageTest.setSelected(true);
+//                    mTextTest.setSelected(true);
+////                    addLoginFragment();
+//                    break;
+//                case R.id.tab_menu_me:
+//                    selected();
+//                    mImageMe.setSelected(true);
+//                    mTextMe.setSelected(true);
+////                    addLoginFragment();
+//                    break;
+//            }
+////            fragmentTransaction.commit();//提交事务
+//        }else if (panduan == 1){
+//            image_main_login.setVisibility(View.GONE);
+//            text_main_login.setVisibility(View.GONE);
+//            switch (v.getId()){
+//                case R.id.tab_menu_timetable:
+//                    selected();//重置所有文本的选中状态的方法
+//                    mImageTimetable.setSelected(true);
+//                    mTextTimetable.setSelected(true);
+////                    mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    if (timeTableFragment == null){
+//                        timeTableFragment = new TimeTableFragment();
+//                        fragmentTransaction.add(R.id.layout_content,timeTableFragment);//将Fragment添加到布局中
+//                    }else{
+//                        fragmentTransaction.show(timeTableFragment);
+//                    }
+//                    break;
+//                case R.id.tab_menu_grade:
+//                    selected();
+//                    mImageGrade.setSelected(true);
+//                    mTextGrade.setSelected(true);
+////                    mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    if (gradeFragment == null){
+//                        gradeFragment = new GradeFragment();
+//                        fragmentTransaction.add(R.id.layout_content,gradeFragment);
+//                    }else {
+//                        fragmentTransaction.show(gradeFragment);
+//                    }
+//                    break;
+//                case R.id.tab_menu_test:
+//                    selected();
+//                    mImageTest.setSelected(true);
+//                    mTextTest.setSelected(true);
+////                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    if (testFragment == null){
+//                        testFragment = new TestFragment();
+//                        fragmentTransaction.add(R.id.layout_content,testFragment);
+//                    }else {
+//                        fragmentTransaction.show(testFragment);
+//                    }
+//                    break;
+//                case R.id.tab_menu_me:
+//                    selected();
+//                    mImageMe.setSelected(true);
+//                    mTextMe.setSelected(true);
+////                    mTextMe.setTextColor(getResources().getColor(R.color.colorBlue));
+//                    if (meFragment == null){
+//                        meFragment = new MeFragment();
+//                        fragmentTransaction.add(R.id.layout_content,meFragment);
+//                    }else {
+//                        fragmentTransaction.show(meFragment);
+//                    }
+//                    break;
+//            }
+//            fragmentTransaction.commit();//提交事务
+//        }
+//    }
 
     /**
      * 控件的点击事件实现
@@ -203,53 +312,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fragmentTransaction = fragmentManager.beginTransaction();//开启另一个事物
         hideAllFrament(fragmentTransaction);//隐藏所有Fragment方法
-        if (panduan == 0){
-            switch (v.getId()){
-                case R.id.tab_menu_timetable:
-                    selected();//重置所有文本的选中状态的方法
-//                    goneAllTitle();//隐藏所有的title
-//                    titleTimetable.setVisibility(View.VISIBLE);
-                    mImageTimetable.setSelected(true);
-                    mTextTimetable.setSelected(true);
-//                    mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
-                    addLoginFragment();
-                    break;
-                case R.id.tab_menu_grade:
-                    selected();
-//                    goneAllTitle();//隐藏所有的title
-//                    titleGrade.setVisibility(View.VISIBLE);
-                    mImageGrade.setSelected(true);
-                    mTextGrade.setSelected(true);
-//                    mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
-                    addLoginFragment();
-                    break;
-                case R.id.tab_menu_test:
-                    selected();
-//                    goneAllTitle();//隐藏所有的title
-//                    titleTest.setVisibility(View.VISIBLE);
-                    mImageTest.setSelected(true);
-                    mTextTest.setSelected(true);
-//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
-                    addLoginFragment();
-                    break;
-                case R.id.tab_menu_me:
-                    selected();
-//                    goneAllTitle();//隐藏所有的title
-//                    titleMe.setVisibility(View.VISIBLE);
-                    mImageMe.setSelected(true);
-                    mTextMe.setSelected(true);
-//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
-                    addLoginFragment();
-                    break;
-            }
-            fragmentTransaction.commit();//提交事务
-        }else if (panduan == 1){
+
+            image_main_login.setVisibility(View.GONE);
+            text_main_login.setVisibility(View.GONE);
             switch (v.getId()){
                 case R.id.tab_menu_timetable:
                     selected();//重置所有文本的选中状态的方法
                     mImageTimetable.setSelected(true);
                     mTextTimetable.setSelected(true);
-//                    mTextTimetable.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (timeTableFragment == null){
                         timeTableFragment = new TimeTableFragment();
                         fragmentTransaction.add(R.id.layout_content,timeTableFragment);//将Fragment添加到布局中
@@ -261,7 +331,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     selected();
                     mImageGrade.setSelected(true);
                     mTextGrade.setSelected(true);
-//                    mTextGrade.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (gradeFragment == null){
                         gradeFragment = new GradeFragment();
                         fragmentTransaction.add(R.id.layout_content,gradeFragment);
@@ -273,7 +342,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     selected();
                     mImageTest.setSelected(true);
                     mTextTest.setSelected(true);
-//                    mTextTest.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (testFragment == null){
                         testFragment = new TestFragment();
                         fragmentTransaction.add(R.id.layout_content,testFragment);
@@ -285,7 +353,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     selected();
                     mImageMe.setSelected(true);
                     mTextMe.setSelected(true);
-//                    mTextMe.setTextColor(getResources().getColor(R.color.colorBlue));
                     if (meFragment == null){
                         meFragment = new MeFragment();
                         fragmentTransaction.add(R.id.layout_content,meFragment);
@@ -296,6 +363,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             fragmentTransaction.commit();//提交事务
         }
-    }
+
+
 }
 

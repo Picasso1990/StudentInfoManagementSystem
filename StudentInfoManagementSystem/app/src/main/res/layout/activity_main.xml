@@ -3,85 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/layout_title"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:background="@color/colorBlue"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="40dp">-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/image_upward"-->
-            <!--android:src="@mipmap/upward"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-            <!--android:layout_toRightOf="@+id/image_upward"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:text="上周"-->
-            <!--android:textColor="@color/colorWhite"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-            <!--android:layout_centerInParent="true"-->
-            <!--android:textColor="@color/colorWhite"-->
-            <!--android:textSize="16dp"-->
-            <!--android:text="课程表"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/image_down"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:src="@mipmap/down"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-            <!--android:layout_toLeftOf="@+id/image_down"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:text="下周"-->
-            <!--android:textColor="@color/colorWhite"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-    <!--</RelativeLayout>-->
-
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/layout_title"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-        <!--<include android:id="@+id/layout_timetable"-->
-            <!--layout="@layout/title_timetable"-->
-            <!--android:visibility="visible"/>-->
-
-        <!--<include android:id="@+id/layout_grade"-->
-            <!--layout="@layout/title_grade"-->
-            <!--android:visibility="gone"/>-->
-
-
-        <!--<include android:id="@+id/layout_test"-->
-            <!--layout="@layout/title_test"-->
-            <!--android:visibility="gone"/>-->
-
-        <!--<include android:id="@+id/layout_me"-->
-            <!--layout="@layout/title_me"-->
-            <!--android:visibility="gone"/>-->
-
-    <!--</RelativeLayout>-->
-
     <RelativeLayout
         android:id="@+id/layout_content"
         android:layout_above="@+id/view_below"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_main_login"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/please_login"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_main_login"
+            android:text="请先登录使用"
+            android:textSize="10sp"
+            android:layout_below="@+id/image_main_login"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </RelativeLayout>
 
@@ -89,7 +33,7 @@
         android:id="@+id/view_below"
         android:layout_above="@+id/tab_menu"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:background="@color/colorBlue"/>
 
     <LinearLayout
